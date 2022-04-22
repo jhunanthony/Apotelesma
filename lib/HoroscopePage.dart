@@ -1,6 +1,53 @@
 import 'package:flutter/material.dart';
 
 // ignore: use_key_in_widget_constructors
+class HoroscopeData {
+  final int id;
+  final String symbol;
+  final String element;
+  final String fortune;
+  final String jewelry;
+  final String daterRange;
+  final String keyTraits;
+  final String luckyColor;
+  final String zodiacSign;
+  final String luckyNumber;
+  final String compatibility;
+  final String rulingPlanet;
+
+  HoroscopeData({
+    @required this.id,
+    @required this.symbol,
+    @required this.element,
+    @required this.fortune,
+    @required this.jewelry,
+    @required this.daterRange,
+    @required this.keyTraits,
+    @required this.luckyColor,
+    @required this.zodiacSign,
+    @required this.luckyNumber,
+    @required this.compatibility,
+    @required this.rulingPlanet,
+  });
+
+  factory HoroscopeData.fromJson(Map<String, dynamic> json) {
+    return HoroscopeData(
+      id: json['id'],
+      symbol: json['Symbol'],
+      element: json['Element'],
+      fortune: json['Fortune'],
+      jewelry: json['Jewelry'],
+      daterRange: json['Date Range'],
+      keyTraits: json['Key Traits'],
+      luckyColor: json['Lucky Color'],
+      zodiacSign: json['Zodiac Sign'],
+      luckyNumber: json['Lucky Number'],
+      compatibility: json['Compatibility'],
+      rulingPlanet: json['Ruling Planet'],
+    );
+  }
+}
+
 class HoroscopePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
