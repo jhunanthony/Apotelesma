@@ -1,10 +1,10 @@
+import 'package:flip_card/flip_card.dart';
 import 'package:flip_card/flip_card_controller.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as https;
-
 
 // ignore: use_key_in_widget_constructors
 class HoroscopeData {
@@ -76,7 +76,7 @@ class HoroscopePage extends StatefulWidget {
 
 class HoroscopePageState extends State<HoroscopePage> {
   Future<List<HoroscopeData>> futureData;
- 
+  GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
   @override
   void initState() {
     super.initState();
@@ -95,8 +95,120 @@ class HoroscopePageState extends State<HoroscopePage> {
                 image: AssetImage('asset/images/ApotelesmaBackground.jpg'),
                 fit: BoxFit.fill),
           ),
-          
-          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              //TOP NAV BAR
+              const Text('2022 HOROSCOPE',
+                  style: TextStyle(
+                      fontFamily: 'Codiac', fontSize: 50, color: Colors.white)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  FlipCard(
+                    fill: Fill
+                        .fillBack, // Fill the back side of the card to make in the same size as the front.
+                    direction: FlipDirection.HORIZONTAL, // default
+                    front: Container(
+                      height: 380,
+                      width: 230,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('asset/images/Card1.jpg'),
+                            fit: BoxFit.fill),
+                      ),
+                      child: const Text('Front'),
+                    ),
+                    back: Container(
+                      height: 380,
+                      width: 230,
+                      child: const Text('Back'),
+                    ),
+                  ),
+                  FlipCard(
+                    fill: Fill
+                        .fillBack, // Fill the back side of the card to make in the same size as the front.
+                    direction: FlipDirection.HORIZONTAL, // default
+                    front: Container(
+                      height: 380,
+                      width: 230,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('asset/images/Card2.jpg'),
+                            fit: BoxFit.fill),
+                      ),
+                      child: const Text('Front'),
+                    ),
+                    back: Container(
+                      height: 380,
+                      width: 230,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('asset/images/Card1.jpg'),
+                            fit: BoxFit.fill),
+                      ),
+                      child: const Text('Back'),
+                    ),
+                  ),
+                  FlipCard(
+                    fill: Fill
+                        .fillBack, // Fill the back side of the card to make in the same size as the front.
+                    direction: FlipDirection.HORIZONTAL, // default
+                    front: Container(
+                      height: 380,
+                      width: 230,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('asset/images/Card2.jpg'),
+                            fit: BoxFit.fill),
+                      ),
+                      child: const Text('Front'),
+                    ),
+                    back: Container(
+                      height: 380,
+                      width: 230,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('asset/images/Card1.jpg'),
+                            fit: BoxFit.fill),
+                      ),
+                      child: const Text('Back'),
+                    ),
+                  ),
+                  FlipCard(
+                    fill: Fill
+                        .fillBack, // Fill the back side of the card to make in the same size as the front.
+                    direction: FlipDirection.HORIZONTAL, // default
+                    front: Container(
+                      height: 380,
+                      width: 230,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('asset/images/Card2.jpg'),
+                            fit: BoxFit.fill),
+                      ),
+                      child: const Text('Front'),
+                    ),
+                    back: Container(
+                      height: 380,
+                      width: 230,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('asset/images/Card1.jpg'),
+                            fit: BoxFit.fill),
+                      ),
+                      child: const Text('Back'),
+                    ),
+                  )
+                ],
+              ),
+
+              //buttonshere
+              const Text('Buttons here',
+                  style: TextStyle(
+                      fontFamily: 'Codiac', fontSize: 50, color: Colors.white)),
+            ],
+          )),
     );
   }
 }
