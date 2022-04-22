@@ -1,3 +1,4 @@
+import 'package:flip_card/flip_card_controller.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'dart:math';
@@ -66,7 +67,6 @@ Future<List<HoroscopeData>> fetchData() async {
   }
 }
 
-
 class HoroscopePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -75,8 +75,8 @@ class HoroscopePage extends StatefulWidget {
 }
 
 class HoroscopePageState extends State<HoroscopePage> {
-   Future<List<HoroscopeData>> futureData;
-
+  Future<List<HoroscopeData>> futureData;
+ 
   @override
   void initState() {
     super.initState();
@@ -89,13 +89,14 @@ class HoroscopePageState extends State<HoroscopePage> {
     return Scaffold(
       backgroundColor: const Color(0xFF100F40),
       body: Container(
-         decoration: const BoxDecoration(
-          image: DecorationImage(
-              opacity: 0.3,
-              image: AssetImage('asset/images/ApotelesmaBackground.jpg'),
-              fit: BoxFit.fill),
-        ),
-      ),
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                opacity: 0.3,
+                image: AssetImage('asset/images/ApotelesmaBackground.jpg'),
+                fit: BoxFit.fill),
+          ),
+          
+          ),
     );
   }
 }

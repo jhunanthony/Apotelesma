@@ -82,8 +82,8 @@ flutter:
   fonts:
      - family: Codiac
        fonts:
-         - asset: assets/fonts/CodianOctoberNineFont.ttf
-         - asset: assets/fonts/Tapestry.ttf
+         - asset: asset/fonts/CodianOctoberNineFont.ttf
+         - asset: asset/fonts/Tapestry.ttf
            style: italic
   # fonts:
   #   - family: Schyler
