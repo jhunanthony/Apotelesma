@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'dart:math';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as https;
+
 
 // ignore: use_key_in_widget_constructors
 class HoroscopeData {
@@ -48,6 +53,20 @@ class HoroscopeData {
   }
 }
 
+Future<List<HoroscopeData>> fetchData() async {
+  const requestURL = "https://retoolapi.dev/ztGnOD/data";
+
+  final response = await https.get(Uri.parse(requestURL));
+
+  if (response.statusCode == 200) {
+    List jsonResponse = json.decode(response.body);
+    return jsonResponse.map((data) => HoroscopeData.fromJson(data)).toList();
+  } else {
+    throw Exception('Unexpected error occured!');
+  }
+}
+
+
 class HoroscopePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -56,9 +75,13 @@ class HoroscopePage extends StatefulWidget {
 }
 
 class HoroscopePageState extends State<HoroscopePage> {
+   Future<List<HoroscopeData>> futureData;
+
   @override
   void initState() {
     super.initState();
+
+    futureData = fetchData();
   }
 
   @override
