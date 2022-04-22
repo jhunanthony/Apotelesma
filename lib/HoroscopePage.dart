@@ -89,6 +89,7 @@ class HoroscopePageState extends State<HoroscopePage> {
     return Scaffold(
       backgroundColor: const Color(0xFF100F40),
       body: Container(
+          padding: EdgeInsets.all(50),
           decoration: const BoxDecoration(
             image: DecorationImage(
                 opacity: 0.3,
@@ -99,6 +100,15 @@ class HoroscopePageState extends State<HoroscopePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               //TOP NAV BAR
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text('Apotelesma',
+                    style: TextStyle(
+                        fontFamily: 'Codiac',
+                        fontSize: 25,
+                        color: Colors.white)),
+              ),
+              //PAGE TITLE
               const Text('2022 HOROSCOPE',
                   style: TextStyle(
                       fontFamily: 'Codiac', fontSize: 50, color: Colors.white)),
@@ -106,14 +116,16 @@ class HoroscopePageState extends State<HoroscopePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   FlipCard(
+                    flipOnTouch: false,
                     fill: Fill
                         .fillBack, // Fill the back side of the card to make in the same size as the front.
                     direction: FlipDirection.HORIZONTAL, // default
                     front: Container(
                       height: 380,
                       width: 230,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: const DecorationImage(
                             image: AssetImage('asset/images/Card1.jpg'),
                             fit: BoxFit.fill),
                       ),
@@ -132,21 +144,45 @@ class HoroscopePageState extends State<HoroscopePage> {
                     front: Container(
                       height: 380,
                       width: 230,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('asset/images/Card2.jpg'),
-                            fit: BoxFit.fill),
-                      ),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: const DecorationImage(
+                              image: AssetImage('asset/images/Card2.jpg'),
+                              fit: BoxFit.cover),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.purple[900],
+                              spreadRadius: 4,
+                              blurRadius: 20,
+                            ),
+                            BoxShadow(
+                              color: Colors.purple[900],
+                              spreadRadius: -4,
+                              blurRadius: 5,
+                            )
+                          ]),
                       child: const Text('Front'),
                     ),
                     back: Container(
                       height: 380,
                       width: 230,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('asset/images/Card1.jpg'),
-                            fit: BoxFit.fill),
-                      ),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: const DecorationImage(
+                              image: AssetImage('asset/images/Card1.jpg'),
+                              fit: BoxFit.fill),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.purple[900],
+                              spreadRadius: 4,
+                              blurRadius: 20,
+                            ),
+                            BoxShadow(
+                              color: Colors.purple[900],
+                              spreadRadius: -4,
+                              blurRadius: 5,
+                            )
+                          ]),
                       child: const Text('Back'),
                     ),
                   ),
@@ -157,21 +193,45 @@ class HoroscopePageState extends State<HoroscopePage> {
                     front: Container(
                       height: 380,
                       width: 230,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('asset/images/Card2.jpg'),
-                            fit: BoxFit.fill),
-                      ),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: const DecorationImage(
+                              image: AssetImage('asset/images/Card2.jpg'),
+                              fit: BoxFit.cover),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.purple[900],
+                              spreadRadius: 4,
+                              blurRadius: 20,
+                            ),
+                            BoxShadow(
+                              color: Colors.purple[900],
+                              spreadRadius: -4,
+                              blurRadius: 5,
+                            )
+                          ]),
                       child: const Text('Front'),
                     ),
                     back: Container(
                       height: 380,
                       width: 230,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('asset/images/Card1.jpg'),
-                            fit: BoxFit.fill),
-                      ),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: const DecorationImage(
+                              image: AssetImage('asset/images/Card1.jpg'),
+                              fit: BoxFit.fill),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.purple[900],
+                              spreadRadius: 4,
+                              blurRadius: 20,
+                            ),
+                            BoxShadow(
+                              color: Colors.purple[900],
+                              spreadRadius: -4,
+                              blurRadius: 5,
+                            )
+                          ]),
                       child: const Text('Back'),
                     ),
                   ),
@@ -182,21 +242,45 @@ class HoroscopePageState extends State<HoroscopePage> {
                     front: Container(
                       height: 380,
                       width: 230,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('asset/images/Card2.jpg'),
-                            fit: BoxFit.fill),
-                      ),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: const DecorationImage(
+                              image: AssetImage('asset/images/Card2.jpg'),
+                              fit: BoxFit.cover),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.purple[900],
+                              spreadRadius: 4,
+                              blurRadius: 20,
+                            ),
+                            BoxShadow(
+                              color: Colors.purple[900],
+                              spreadRadius: -4,
+                              blurRadius: 5,
+                            )
+                          ]),
                       child: const Text('Front'),
                     ),
                     back: Container(
                       height: 380,
                       width: 230,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('asset/images/Card1.jpg'),
-                            fit: BoxFit.fill),
-                      ),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: const DecorationImage(
+                              image: AssetImage('asset/images/Card1.jpg'),
+                              fit: BoxFit.fill),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.purple[900],
+                              spreadRadius: 4,
+                              blurRadius: 20,
+                            ),
+                            BoxShadow(
+                              color: Colors.purple[900],
+                              spreadRadius: -4,
+                              blurRadius: 5,
+                            )
+                          ]),
                       child: const Text('Back'),
                     ),
                   )
