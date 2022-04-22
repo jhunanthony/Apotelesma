@@ -88,7 +88,14 @@ class HoroscopePageState extends State<HoroscopePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF100F40),
-      body: Container(),
+      body: Container(
+         decoration: const BoxDecoration(
+          image: DecorationImage(
+              opacity: 0.3,
+              image: AssetImage('asset/images/ApotelesmaBackground.jpg'),
+              fit: BoxFit.fill),
+        ),
+      ),
     );
   }
 }
