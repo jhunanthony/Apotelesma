@@ -83,6 +83,9 @@ flutter:
      - family: Codiac
        fonts:
          - asset: asset/fonts/CodianOctoberNineFont.ttf
+           style: italic
+     - family: Tapestry
+       fonts:
          - asset: asset/fonts/Tapestry.ttf
            style: italic
   # fonts:

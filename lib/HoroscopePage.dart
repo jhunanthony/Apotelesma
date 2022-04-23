@@ -54,6 +54,69 @@ class HoroscopeData {
   }
 }
 
+List buttons = [
+  ({
+    "index": "0",
+    "imgName": "asset/images/AriesSymbol.png",
+    "name": "Aries",
+  }),
+  ({
+    "index": "1",
+    "imgName": "asset/images/TaurusSymbol.png",
+    "name": "Taurus",
+  }),
+  ({
+    "index": "2",
+    "imgName": "asset/images/GeminiSymbol.png",
+    "name": "Gemini",
+  }),
+  ({
+    "index": "3",
+    "imgName": "asset/images/CancerSymbol.png",
+    "name": "Cancer",
+  }),
+  ({
+    "index": "4",
+    "imgName": "asset/images/LeoSymbol.png",
+    "name": "Leo",
+  }),
+  ({
+    "index": "5",
+    "imgName": "asset/images/VirgoSymbol.png",
+    "name": "Virgo",
+  }),
+  ({
+    "index": "6",
+    "imgName": "asset/images/LibraSymbol.png",
+    "name": "Libra",
+  }),
+  ({
+    "index": "7",
+    "imgName": "asset/images/ScorpioSymbol.png",
+    "name": "Scorpio",
+  }),
+  ({
+    "index": "8",
+    "imgName": "asset/images/SagittariusSymbol.png",
+    "name": "Sagittarius",
+  }),
+  ({
+    "index": "9",
+    "imgName": "asset/images/CapricornSymbol.png",
+    "name": "Capricorn",
+  }),
+  ({
+    "index": "10",
+    "imgName": "asset/images/AquariusSymbol.png",
+    "name": "Aquarius",
+  }),
+  ({
+    "index": "11",
+    "imgName": "asset/images/PiscesSymbol.png",
+    "name": "Pisces",
+  }),
+];
+
 Future<List<HoroscopeData>> fetchData() async {
   const requestURL = "https://retoolapi.dev/ztGnOD/data";
 
@@ -89,7 +152,7 @@ class HoroscopePageState extends State<HoroscopePage> {
     return Scaffold(
       backgroundColor: const Color(0xFF100F40),
       body: Container(
-          padding: EdgeInsets.all(50),
+          padding: const EdgeInsets.all(30),
           decoration: const BoxDecoration(
             image: DecorationImage(
                 opacity: 0.3,
@@ -288,74 +351,61 @@ class HoroscopePageState extends State<HoroscopePage> {
               ),
 
               //buttonshere
-              const Text('Buttons here',
-                  style: TextStyle(
-                      fontFamily: 'Codiac', fontSize: 50, color: Colors.white)),
+              Container(
+                alignment: Alignment.center,
+                height: 100,
+                width: MediaQuery.of(context).size.width,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: buttons.length,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          margin: const EdgeInsets.only(
+                              top: 20, bottom: 20, right: 10, left: 10),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              gradient: LinearGradient(
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                                colors: <Color>[
+                                  Colors.purple[900],
+                                  const Color(0xFF100F40),
+                                  const Color(0xFF100F40)
+                                ],
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.purple[900],
+                                  spreadRadius: 1,
+                                  blurRadius: 5,
+                                ),
+                              ]),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Image.asset(
+                                '${buttons[index]['imgName']}',
+                                height: 16,
+                                width: 16,
+                              ),
+                              const SizedBox(width: 10),
+                              Text('${buttons[index]['name']}',
+                                  style: const TextStyle(
+                                      fontFamily: 'Tapestry',
+                                      fontSize: 14,
+                                      color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      );
+                    }),
+              )
             ],
           )),
     );
   }
 }
-
-List buttons = [
-  ({
-    "index": "0",
-    "imgName": "asset/images/AriesSymbol.png",
-    "name": "Aries",
-  }),
-  ({
-    "index": "1",
-    "imgName": "asset/images/TaurusSymbol.png",
-    "name": "Taurus",
-  }),
-  ({
-    "index": "2",
-    "imgName": "asset/images/GeminiSymbol.png",
-    "name": "Gemini",
-  }),
-  ({
-    "index": "3",
-    "imgName": "asset/images/CancerSymbol.png",
-    "name": "Cancer",
-  }),
-  ({
-    "index": "4",
-    "imgName": "asset/images/LeoSymbol.png",
-    "name": "Leo",
-  }),
-  ({
-    "index": "5",
-    "imgName": "asset/images/VirgoSymbol.png",
-    "name": "Virgo",
-  }),
-  ({
-    "index": "6",
-    "imgName": "asset/images/LibraSymbol.png",
-    "name": "Libra",
-  }),
-  ({
-    "index": "7",
-    "imgName": "asset/images/ScorpioSymbol.png",
-    "name": "Scorpio",
-  }),
-  ({
-    "index": "8",
-    "imgName": "asset/images/SagittariusSymbol.png",
-    "name": "Sagittarius",
-  }),
-  ({
-    "index": "9",
-    "imgName": "asset/images/CapricornSymbol.png",
-    "name": "Capricorn",
-  }),
-  ({
-    "index": "10",
-    "imgName": "asset/images/AquariusSymbol.png",
-    "name": "Aquarius",
-  }),
-  ({
-    "index": "11",
-    "imgName": "asset/images/PiscesSymbol.png",
-    "name": "Pisces",
-  }),
-];
